@@ -4,13 +4,21 @@ import (
 	"fmt"
 )
 
-type Node struct{}
+type Node struct{
+	Val string
+	Left *Node
+	Right *Node
+}
 
-type Queue struct{}
+type Queue struct{
+	Head *Node
+	Tail *Node
+	Length int
+}
 
 type Cache struct{}
 
- type Hash map[string] * Node
+type Hash map[string] * Node
 
 func main() {
 	fmt.Println("start the cache baby")
