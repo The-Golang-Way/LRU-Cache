@@ -39,7 +39,12 @@ func NewQueue() Queue {
 
 func (c *Cache) Check(str string){
   node := &Node{}
-
+  
+  if val, ok := c.Hash[str];{
+    if ok {
+      node = c.Remove(val)
+    }
+  }
 }
 
 func main() {
