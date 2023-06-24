@@ -37,6 +37,15 @@ func NewQueue() Queue {
 	return Queue{}
 }
 
+func (c *Cache) Check(str string){
+  node := &Node{}
+
+}
+
 func main() {
 	fmt.Println("start the cache baby")
+  cache := NewCache()
+  for _, turtles := range []string{"leo","ralph","mickey","don"}{
+    cache.Check(turtles)
+  }
 }
