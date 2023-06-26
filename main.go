@@ -40,9 +40,10 @@ func NewQueue() Queue {
 func (c *Cache) Check(str string){
   node := &Node{}
   
-  if val, ok := c.Hash[str];{
-    if ok {
+    if val, ok := c.Hash[str]; ok{
       node = c.Remove(val)
+    } else {
+      node = &Node{Val: str}
     }
   }
 }
