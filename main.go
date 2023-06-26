@@ -49,6 +49,17 @@ func (c *Cache) Check(str string){
   }
 }
 
+func (c *Cache) Remove(n *Node) *Node{
+  fmt.Printf("remove: %s\n", n.Val)
+  left := n.Left
+  right := n.Right
+
+  left.Right = right
+  right.Left = left
+  delete(c.Hash, n.Val)
+  return n
+}
+
 func (c *Cache) Add(n *Node){
   fmt.Printf("add: %s\n", n.Val)
   tmp := c.Queue.Head.Right
