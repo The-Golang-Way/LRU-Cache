@@ -45,7 +45,19 @@ func (c *Cache) Check(str string){
     } else {
       node = &Node{Val: str}
     }
+    c.Add(node)
   }
+}
+
+func (c *Cache) Add(n *Node){
+  fmt.Printf("add: %s\n", n.Val)
+  tmp := c.Queue.Head.Right
+  
+  c.Queue.Head.Right = n
+  n.Left = c.Queue.Head
+  n.Right = tmp
+  tmp.Left = n
+
 }
 
 func main() {
