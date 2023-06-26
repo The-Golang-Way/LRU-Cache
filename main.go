@@ -34,7 +34,7 @@ func NewQueue() Queue {
 	head.Right = tail
 	tail.Left = head
 
-	return Queue{}
+  return Queue{Head:head, Tail:tail}
 }
 
 func (c *Cache) Check(str string){
