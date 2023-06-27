@@ -4,6 +4,8 @@ import (
 	"fmt"
 )
 
+const SIZE = 5
+
 type Node struct{
 	Val string
 	Left *Node
@@ -57,6 +59,7 @@ func (c *Cache) Remove(n *Node) *Node{
 
   left.Right = right
   right.Left = left
+  c.Queue.Length -= 1
   delete(c.Hash, n.Val)
   return n
 }
@@ -70,6 +73,10 @@ func (c *Cache) Add(n *Node){
   n.Right = tmp
   tmp.Left = n
 
+  c.Queue.Length++
+  if c.Queue.Length > SIZE {
+    c.Remove(c.Queue.Tail.Left)
+  }
 }
 
 func main() {
