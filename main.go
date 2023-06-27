@@ -92,10 +92,15 @@ func (q *Queue) Display() {
   fmt.Println("]")
 }
 
+func (c *Cache) cacheDisplay() {
+  c.Queue.Display()
+}
+
 func main() {
 	fmt.Println("start the cache baby")
   cache := NewCache()
   for _, turtles := range []string{"leo","ralph","mickey","don"}{
     cache.Check(turtles)
+    cache.cacheDisplay()
   }
 }
