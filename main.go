@@ -79,6 +79,19 @@ func (c *Cache) Add(n *Node){
   }
 }
 
+func (q *Queue) Display() {
+  node := q.Head.Right
+  fmt.Printf("%d - [", q.Length)
+  for i := 0; i < q.Length; i++{
+    fmt.Printf("{%s}", node.Val)
+    if i < q.Length - 1{
+      fmt.Printf("<-->")
+    }
+    node = node.Right
+  }
+  fmt.Println("]")
+}
+
 func main() {
 	fmt.Println("start the cache baby")
   cache := NewCache()
