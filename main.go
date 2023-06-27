@@ -46,6 +46,7 @@ func (c *Cache) Check(str string){
       node = &Node{Val: str}
     }
     c.Add(node)
+    c.Hash[str] = node
   }
 }
 
