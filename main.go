@@ -59,7 +59,7 @@ func (c *Cache) Remove(n *Node) *Node{
 
   left.Right = right
   right.Left = left
-  c.Queue.Length -= 1
+  c.Queue.Length--
   delete(c.Hash, n.Val)
   return n
 }
@@ -92,7 +92,7 @@ func (q *Queue) Display() {
   fmt.Println("]")
 }
 
-func (c *Cache) cacheDisplay() {
+func (c *Cache) CacheDisplay() {
   c.Queue.Display()
 }
 
@@ -102,6 +102,6 @@ func main() {
   // add items in queue
   for _, turtles := range []string{"leo","ralph","mickey","don"}{
     cache.Check(turtles)
-    cache.cacheDisplay()
+    cache.CacheDisplay()
   }
 }
