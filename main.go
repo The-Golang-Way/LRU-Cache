@@ -4,12 +4,12 @@ import (
 	"fmt"
 )
 
-const SIZE = 5
+// this var will reduce the queue to the given SIZE
+const SIZE = 2 
 
-type Node struct{
-	Val string
-	Left *Node
-	Right *Node
+type Cache struct{
+	Queue Queue
+	Hash Hash
 }
 
 type Queue struct{
@@ -18,12 +18,13 @@ type Queue struct{
 	Length int
 }
 
-type Cache struct{
-	Queue Queue
-	Hash Hash
+type Node struct{
+	Val string
+	Left *Node
+	Right *Node
 }
 
-type Hash map[string] * Node
+type Hash map[string]*Node
 
 func NewCache() Cache {
 	return Cache{Queue: NewQueue(), Hash: Hash{}}
@@ -48,8 +49,7 @@ func (c *Cache) Check(str string){
       node = &Node{Val: str}
     }
     c.Add(node)
-    c.Hash[str] = node
-  }
+  c.Hash[str] = node 
 }
 
 func (c *Cache) Remove(n *Node) *Node{
@@ -99,6 +99,7 @@ func (c *Cache) cacheDisplay() {
 func main() {
 	fmt.Println("start the cache baby")
   cache := NewCache()
+  // add items in queue
   for _, turtles := range []string{"leo","ralph","mickey","don"}{
     cache.Check(turtles)
     cache.cacheDisplay()
