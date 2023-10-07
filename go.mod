@@ -1,3 +1,3 @@
-module github.com/Yehdar/ghetto-redis-LRU-cache-rewrite/v2
+module github.com/The-Golang-Way/LRU-cache/v2
 
 go 1.20
