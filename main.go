@@ -100,7 +100,7 @@ func main() {
 	fmt.Println("start the cache baby")
   cache := NewCache()
   // add items in queue
-  for _, turtles := range []string{"leo","ralph","mickey","don","Miles Morales"}{
+  for _, turtles := range []string{"leo","ralph","mickey","don","Miles Morales","Timmy"}{
     cache.Check(turtles)
     cache.CacheDisplay()
   }
